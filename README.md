@@ -37,7 +37,11 @@ For more info on how to deploy the project on different platforms, take a look t
 
 ## Demo Video
 
+Sorry for the quaity of the video, don't forget that the gui window frame size is 320px-480px.  
+
 https://user-images.githubusercontent.com/77603228/174900490-152f011f-f5bb-4e6f-b4d0-0d30cea6be77.mp4
+
+
 
 
 
