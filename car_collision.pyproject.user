@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.1, 2022-06-16T12:04:20. -->
+<!-- Written by QtCreator 7.0.1, 2022-06-21T23:03:47. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -143,6 +143,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">E:/Desktop/Car GUI Project/car_collision_gui/car_collision/MainGui.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.E:/Desktop/Car GUI Project/car_collision_gui/car_collision/MainGui.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">E:/Desktop/Car GUI Project/car_collision_gui/car_collision/MainGui.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{7cba223b-e3a4-4b15-888f-5af9f66f8d89}</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">E:\Desktop\Car GUI Project\car_collision_gui\car_collision\MainGui.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

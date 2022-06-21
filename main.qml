@@ -5,7 +5,7 @@ import QtQuick.Shapes 1.12
 import Qt.labs.animation 1.0
 //import QtGraphicalEffects
 import QtQuick.Controls 2.1
-//import QtMultimedia 5.0
+import QtMultimedia
 
 Window {
     id: root

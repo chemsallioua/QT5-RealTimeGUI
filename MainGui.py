@@ -6,10 +6,11 @@ import socket
 
 from pathlib import Path
 from ast import literal_eval
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtQml import QQmlApplicationEngine
-from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot, QPointF, QThread
-from PyQt5.QtChart import QChart, QChartView
+from PySide6.QtWidgets import QApplication
+from PySide6.QtQml import QQmlApplicationEngine
+from PySide6.QtCore import Signal, QObject, Slot, QPointF, QThread
+from PySide6 import QtCharts
+
 
 class gui():
 
@@ -64,11 +65,11 @@ class gui():
 
     class _DataReceiveThread(QThread):
 
-        speed = pyqtSignal(float)
-        ttc = pyqtSignal(float)
-        fcw = pyqtSignal(bool)
+        speed = Signal(float)
+        ttc = Signal(float)
+        fcw = Signal(bool)
         # strr = Signal(str)
-        is_connected = pyqtSignal(bool)
+        is_connected = Signal(bool)
 
         def __init__(self, HOST='127.0.0.1', PORT=7000, parent=None):
             super().__init__(parent)
@@ -129,7 +130,7 @@ class gui():
                               for i in range(0, len(self.XPoints))]
             # print("hello")
 
-        @pyqtSlot(QObject, QObject)
+        @Slot(QtCharts.QAbstractSeries, QtCharts.QAbstractAxis)
         def update_series(self, series, axisY):
             series.replace(self.XYQPoints)
 
@@ -140,7 +141,7 @@ class gui():
                 axisY.setMax(max(self.XPoints) + range*0.15)
                 axisY.setMin(min(self.XPoints) - range*0.15)
 
-        @pyqtSlot(float)
+        @Slot(float)
         def get_data(self, speed):
 
             if(speed > self.maxY):
@@ -158,8 +159,8 @@ class gui():
 
     class _SpeedDisplay(QObject):
 
-        speedSignal = pyqtSignal(float)
-        udpStatusSignal = pyqtSignal(bool)
+        speedSignal = Signal(float)
+        udpStatusSignal = Signal(bool)
 
         def __init__(self,
                      MaxSpeed=None,
@@ -170,7 +171,7 @@ class gui():
             self.maxSpeed = MaxSpeed
             self.minSpeed = MinSpeed
 
-        @pyqtSlot(float)
+        @Slot(float)
         def get_data(self, speed):
 
             if(self.maxSpeed is not None):
@@ -182,14 +183,14 @@ class gui():
 
             self.speedSignal.emit(speed)
 
-        @pyqtSlot(bool)
+        @Slot(bool)
         def get_udp_status(self, status):
             self.udpStatusSignal.emit(status)
 
     class _TimeToCollisionDisplay(QObject):
 
-        timeToCollisonSignal = pyqtSignal(float)
-        fcwSignal = pyqtSignal(bool)
+        timeToCollisonSignal = Signal(float)
+        fcwSignal = Signal(bool)
 
         def __init__(self,
                      MaxTTC=None,
@@ -200,7 +201,7 @@ class gui():
             self.maxTTC = MaxTTC
             self.minTTC = MinTTC
 
-        @pyqtSlot(float)
+        @Slot(float)
         def get_data(self, ttc):
             # print(ttc)
             if(self.maxTTC is not None):
@@ -212,6 +213,6 @@ class gui():
 
             self.timeToCollisonSignal.emit(ttc)
 
-        @pyqtSlot(bool)
+        @Slot(bool)
         def get_fcw(self, fcw):
             self.fcwSignal.emit(fcw)
