@@ -15,6 +15,7 @@ The aim of the project is to use the potential of Qt5 to create a simple GUI wit
 Originally it was used to display data for a car collision algorithm, therefore the only variables of concern to be shown are the "speed" and the "time to collision".
 The communication of the data is done through **UDP Sockets**.
 
+
 ## Dependencies
 
 In order to run this project you must have:
@@ -33,6 +34,10 @@ In order to communicate data to the GUI use the ***UDP_Server_Test.py*** script.
 
 For more info on how to deploy the project on different platforms, take a look to this:
 > https://doc.qt.io/qtforpython/deployment.html
+
+## Demo Video
+
+https://user-images.githubusercontent.com/77603228/174900490-152f011f-f5bb-4e6f-b4d0-0d30cea6be77.mp4
 
 
 
