@@ -1,6 +1,6 @@
 # A Simple Graphical User Interface in Qt5 using PySide6.
 
-This is a modern PySide6 GUI developped with QtQuick & QML in the Qt5 Framework.
+This is a modern PySide6 GUI developed with QtQuick & QML in the Qt5 Framework.
 
 Qt Quick is Qt's declarative user interface design framework, which uses the Qt Modeling Language (QML) to develop bespoke user interfaces. Originally designed for use in mobile apps, it includes dynamic graphical components as well as fluid transitions and effects that allow you to emulate the kind of user interfaces found on mobile devices.
 
